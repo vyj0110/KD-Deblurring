@@ -1,6 +1,6 @@
 import torch
 import torch.onnx
-from models import LightweightUNet  # Make sure this matches your actual model name
+from models import LightweightUNet  
 
 def export_to_onnx(model_path="student_model_best.pth", onnx_path="student_model.onnx", input_shape=(1, 3, 128, 128)):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -26,7 +26,7 @@ def export_to_onnx(model_path="student_model_best.pth", onnx_path="student_model
         verbose=False
     )
 
-    print(f"✅ ONNX model exported successfully to: {onnx_path}")
+    print(f"ONNX model exported successfully to: {onnx_path}")
 
 if __name__ == "__main__":
     export_to_onnx()
