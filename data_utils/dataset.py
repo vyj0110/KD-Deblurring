@@ -5,6 +5,10 @@ from torch.utils.data import Dataset
 from torchvision import transforms
 
 class DeblurDataset(Dataset):
+    """
+    to preprocess and load image
+    """
+
     def __init__(self, blur_dir, sharp_dir, teacher_dir=None, image_size=(256, 256)):
         self.blur_dir = blur_dir
         self.sharp_dir = sharp_dir
@@ -33,7 +37,7 @@ class DeblurDataset(Dataset):
             pt_filename = os.path.splitext(img_name)[0] + ".pt"
             teacher_path = os.path.join(self.teacher_dir, pt_filename)
             teacher_output = torch.load(teacher_path)
-            teacher_output = torch.clamp(teacher_output, 0.0, 1.0)  # ✅ Clamp for safety
+            teacher_output = torch.clamp(teacher_output, 0.0, 1.0)  # Clamp for safety
             return blur_image, sharp_image, teacher_output
         else:
             return blur_image, sharp_image
