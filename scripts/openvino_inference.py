@@ -27,4 +27,4 @@ for _ in range(N):
 end = time.time()
 
 fps = N / (end - start)
-print(f"\n✅ OpenVINO Inference FPS @128x128: {fps:.2f}\n")
+print(f"\nOpenVINO Inference FPS @128x128: {fps:.2f}\n")
