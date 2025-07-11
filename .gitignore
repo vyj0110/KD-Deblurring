@@ -1,0 +1,33 @@
+#Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pkl
+*.npy
+*.npz
+*.tmp
+*.log
+
+#Virtual Environments
+.venv/
+torch_env/
+env/
+
+# Model files (general)
+*.pth
+*.pt
+*.onnx
+*.xml
+*.bin
+
+# Keep this one allowed
+!student_model_best.pth
+!student_model.onnx
+!openvino_ir/student_model.xml
+!openvino_ir/student_model.bin
+
+#System
+.DS_Store
+.vscode/
+.idea/
+.ipynb_checkpoints/
